@@ -23,7 +23,6 @@ app.get('/', function(req, res){
 app.post('/api/shorten', function(req, res){
   var longUrl = req.body.url;
   var shortUrl = '';
-
   // check if url already exists in database
   Url.findOne({long_url: longUrl}, function (err, doc){
     if (doc){
@@ -50,7 +49,6 @@ app.post('/api/shorten', function(req, res){
     }
 
   });
-
 });
 
 app.get('/:encoded_id', function(req, res){
